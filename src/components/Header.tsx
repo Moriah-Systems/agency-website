@@ -19,8 +19,8 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-gold/5">
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" className="flex flex-col items-center leading-none">
-          <span className="gold-shimmer font-heading text-2xl tracking-[0.15em] font-normal">MORIAH</span>
-          <span className="text-white/50 text-[10px] tracking-[0.35em] font-light uppercase mt-0.5">Systems</span>
+          <span className="gold-shimmer font-heading text-2xl tracking-[0.15em] font-normal">HEBRON</span>
+          <span className="text-white/50 text-[10px] tracking-[0.35em] font-light uppercase mt-0.5">Enterprises</span>
         </Link>
 
         {/* Desktop Nav */}

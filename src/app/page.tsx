@@ -83,7 +83,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="overline-decorated mb-8 animate-fade-up">
-            <span className="text-gold-muted text-xs tracking-[0.3em] uppercase font-light">Moriah Systems</span>
+            <span className="text-gold-muted text-xs tracking-[0.3em] uppercase font-light">Hebron Enterprises</span>
           </div>
 
           <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] font-light tracking-wide leading-[1.15] mb-8 animate-fade-up-delay-1">

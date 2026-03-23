@@ -8,8 +8,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex flex-col items-start leading-none mb-4">
-              <span className="gold-shimmer font-heading text-xl tracking-[0.15em] font-normal">MORIAH</span>
-              <span className="text-white/50 text-[10px] tracking-[0.35em] font-light uppercase mt-0.5">Systems</span>
+              <span className="gold-shimmer font-heading text-xl tracking-[0.15em] font-normal">HEBRON</span>
+              <span className="text-white/50 text-[10px] tracking-[0.35em] font-light uppercase mt-0.5">Enterprises</span>
             </div>
             <p className="text-muted/70 text-sm leading-relaxed font-light">
               Building digital solutions that elevate your business. From websites to custom software.
@@ -47,7 +47,7 @@ export default function Footer() {
           <div>
             <h4 className="text-gold-muted font-light text-xs uppercase tracking-[0.2em] mb-5">Get in Touch</h4>
             <ul className="space-y-2 text-muted/60 text-sm font-light">
-              <li>dinuwan@moriahsystems.com</li>
+              <li>dinuwan@hebronenterprises.com</li>
               <li>Sri Lanka</li>
             </ul>
           </div>
@@ -55,7 +55,7 @@ export default function Footer() {
 
         <div className="border-t border-gold/5 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted/40 text-sm font-light">
-            &copy; {new Date().getFullYear()} Moriah Systems. All rights reserved.
+            &copy; {new Date().getFullYear()} Hebron Enterprises. All rights reserved.
           </p>
           <p className="text-muted/30 text-xs font-light tracking-wide">
             Built with precision. Maintained with care.
