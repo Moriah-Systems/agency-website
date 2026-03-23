@@ -1,26 +1,382 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --gold: #b89b2d;
+  --gold-light: #d4b94e;
+  --gold-dark: #8a7420;
+  --gold-shine: #f0d060;
+  --gold-muted: #9a8a3d;
+  --card: #111111;
+  --card-hover: #1a1a1a;
+  --muted: #a0a0a0;
+  --border: #222222;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-shine: var(--gold-shine);
+  --color-gold-muted: var(--gold-muted);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: #000000;
+}
+
+/* Heading font */
+.font-heading {
+  font-family: var(--font-heading), Georgia, "Times New Roman", serif;
+}
+
+/* Metallic gold text */
+.gold-text {
+  background: linear-gradient(
+    135deg,
+    #8a6d0f 0%,
+    #b89b2d 20%,
+    #f0d060 40%,
+    #d4b94e 50%,
+    #f0d060 60%,
+    #b89b2d 80%,
+    #8a6d0f 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated gold shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #8a6d0f 0%,
+    #b89b2d 15%,
+    #f0d060 30%,
+    #d4b94e 45%,
+    #f5e080 50%,
+    #d4b94e 55%,
+    #f0d060 70%,
+    #b89b2d 85%,
+    #8a6d0f 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+/* Decorative overline: gold lines flanking text */
+.overline-decorated {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.overline-decorated::before,
+.overline-decorated::after {
+  content: "";
+  height: 1px;
+  width: 2rem;
+  background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-muted), transparent);
+  max-width: 12rem;
+  margin: 0 auto;
+}
+
+/* Premium card with glassmorphism */
+.card-premium {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(184, 155, 45, 0.08);
+  transition: all 0.3s ease;
+}
+.card-premium:hover {
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(184, 155, 45, 0.25);
+  box-shadow: 0 8px 32px rgba(184, 155, 45, 0.08);
+}
+
+/* Premium hollow button with sweep animation */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(184, 155, 45, 0.12), transparent);
+  transition: left 0.5s ease;
+}
+.btn-premium:hover::before {
+  left: 100%;
+}
+.btn-premium:hover {
+  border-color: var(--gold-light);
+  color: var(--gold-light);
+  box-shadow: 0 0 20px rgba(184, 155, 45, 0.1);
+}
+
+/* Text link with animated underline */
+.link-underline {
+  position: relative;
+  color: var(--gold);
+  transition: color 0.3s ease;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-light);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
+}
+.link-underline:hover {
+  color: var(--gold-light);
+}
+
+/* Nav link with centered underline on hover */
+.nav-link-premium {
+  position: relative;
+}
+.nav-link-premium::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link-premium:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ============================================================
+   ANIMATION SYSTEM
+   ============================================================ */
+
+/* Fade-up entrance */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slow organic drift for background orbs */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(15px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, 10px) scale(0.95);
+  }
+}
+
+/* Particle dots rising */
+@keyframes drift-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(0.5);
+  }
+}
+
+/* Subtle bounce for scroll indicator */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+/* Slow rotation for geometric rings */
+@keyframes rotate-slow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ============================================================
+   ENTRANCE ANIMATION UTILITIES
+   ============================================================ */
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.15s forwards;
+}
+
+.animate-fade-up-delay-2 {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.3s forwards;
+}
+
+.animate-fade-up-delay-3 {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.45s forwards;
+}
+
+.animate-fade-up-delay-4 {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.6s forwards;
+}
+
+/* ============================================================
+   HERO BACKGROUND ELEMENTS
+   ============================================================ */
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: drift-up linear infinite;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(184, 155, 45, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 155, 45, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-geo-ring {
+  position: absolute;
+  border: 1px solid rgba(184, 155, 45, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotate-slow 60s linear infinite;
+}
+
+.scroll-indicator {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Sub-page hero entrance */
+.subpage-hero-content {
+  opacity: 0;
+  animation: fade-up 0.7s ease-out 0.1s forwards;
+}
+
+/* ============================================================
+   SCROLL-DRIVEN REVEAL
+   ============================================================ */
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    opacity: 0;
+    animation: fade-up 0.6s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .scroll-reveal {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   ICON GLOW ON HOVER
+   ============================================================ */
+
+.icon-glow {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.group:hover .icon-glow {
+  border-color: rgba(184, 155, 45, 0.4);
+  box-shadow: 0 0 16px rgba(184, 155, 45, 0.15);
 }
