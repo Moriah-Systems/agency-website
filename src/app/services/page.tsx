@@ -6,6 +6,209 @@ export const metadata: Metadata = {
   description: "Website development, hosting, SEO, and custom software solutions for your business.",
 };
 
+/* ── Visual illustrations for each service ── */
+
+function WebDevVisual() {
+  return (
+    <div className="w-full max-w-sm">
+      {/* Browser chrome */}
+      <div className="rounded-xl border border-gold/15 bg-black/40 overflow-hidden shadow-2xl">
+        <div className="flex items-center gap-2 px-4 py-2.5 border-b border-gold/10 bg-black/60">
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+          <div className="flex-1 mx-3 h-5 bg-white/5 rounded-md" />
+        </div>
+        <div className="p-5 space-y-4">
+          {/* Nav */}
+          <div className="flex items-center justify-between">
+            <div className="w-16 h-3 bg-gold/20 rounded" />
+            <div className="flex gap-3">
+              <div className="w-10 h-2 bg-white/10 rounded" />
+              <div className="w-10 h-2 bg-white/10 rounded" />
+              <div className="w-10 h-2 bg-white/10 rounded" />
+            </div>
+          </div>
+          {/* Hero */}
+          <div className="bg-gradient-to-r from-gold/8 to-gold/3 rounded-lg p-4 space-y-2">
+            <div className="w-3/4 h-4 bg-gold/20 rounded" />
+            <div className="w-1/2 h-3 bg-white/8 rounded" />
+            <div className="w-20 h-6 bg-gold/25 rounded-md mt-3" />
+          </div>
+          {/* Cards */}
+          <div className="grid grid-cols-3 gap-2">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-white/5 rounded-md p-2.5 space-y-1.5">
+                <div className="w-6 h-6 bg-gold/15 rounded-md" />
+                <div className="w-full h-2 bg-white/8 rounded" />
+                <div className="w-2/3 h-2 bg-white/5 rounded" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HostingVisual() {
+  return (
+    <div className="w-full max-w-sm space-y-3">
+      {/* Server panel */}
+      <div className="rounded-xl border border-gold/15 bg-black/40 p-5 shadow-2xl">
+        <div className="flex items-center justify-between mb-4">
+          <span className="text-[10px] font-light text-gold-muted tracking-[0.2em] uppercase">Server Status</span>
+          <span className="flex items-center gap-1.5 text-[10px] text-green-400/80 font-light">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+            Online
+          </span>
+        </div>
+        {/* Uptime bar */}
+        <div className="space-y-2.5">
+          <div>
+            <div className="flex justify-between text-[10px] text-muted/50 mb-1">
+              <span>Uptime</span>
+              <span>99.9%</span>
+            </div>
+            <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full w-[99.9%] bg-gradient-to-r from-gold/40 to-gold/60 rounded-full" />
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between text-[10px] text-muted/50 mb-1">
+              <span>Response Time</span>
+              <span>42ms</span>
+            </div>
+            <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full w-[15%] bg-gradient-to-r from-green-500/40 to-green-500/60 rounded-full" />
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between text-[10px] text-muted/50 mb-1">
+              <span>CPU Usage</span>
+              <span>12%</span>
+            </div>
+            <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+              <div className="h-full w-[12%] bg-gradient-to-r from-blue-500/40 to-blue-500/60 rounded-full" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Quick stats */}
+      <div className="grid grid-cols-3 gap-2">
+        {[
+          { label: "Backups", value: "Daily" },
+          { label: "SSL", value: "Active" },
+          { label: "CDN", value: "Global" },
+        ].map((stat) => (
+          <div key={stat.label} className="rounded-lg border border-gold/10 bg-black/40 p-3 text-center">
+            <div className="text-xs font-light text-white/70">{stat.value}</div>
+            <div className="text-[9px] text-muted/40 mt-0.5">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SEOVisual() {
+  return (
+    <div className="w-full max-w-sm space-y-3">
+      {/* Search bar */}
+      <div className="rounded-xl border border-gold/15 bg-black/40 p-5 shadow-2xl">
+        <div className="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2.5 mb-4 border border-white/10">
+          <svg className="w-4 h-4 text-muted/40 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+          <span className="text-xs text-white/40 font-light">your business near me</span>
+        </div>
+        {/* Search results */}
+        <div className="space-y-3">
+          <div className="flex items-start gap-3 bg-gold/5 rounded-lg p-3 border border-gold/15">
+            <span className="text-gold-muted text-xs font-light mt-0.5">#1</span>
+            <div className="flex-1">
+              <div className="w-3/4 h-3 bg-gold/25 rounded mb-1.5" />
+              <div className="w-full h-2 bg-white/8 rounded" />
+              <div className="w-2/3 h-2 bg-white/5 rounded mt-1" />
+            </div>
+          </div>
+          <div className="flex items-start gap-3 opacity-40 p-3">
+            <span className="text-muted/50 text-xs font-light mt-0.5">#2</span>
+            <div className="flex-1">
+              <div className="w-2/3 h-3 bg-white/10 rounded mb-1.5" />
+              <div className="w-full h-2 bg-white/5 rounded" />
+            </div>
+          </div>
+          <div className="flex items-start gap-3 opacity-25 p-3">
+            <span className="text-muted/50 text-xs font-light mt-0.5">#3</span>
+            <div className="flex-1">
+              <div className="w-1/2 h-3 bg-white/10 rounded mb-1.5" />
+              <div className="w-3/4 h-2 bg-white/5 rounded" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Analytics mini chart */}
+      <div className="rounded-lg border border-gold/10 bg-black/40 p-3 flex items-end justify-between gap-1.5 h-16">
+        {[30, 45, 35, 55, 50, 65, 60, 75, 70, 85, 80, 95].map((h, i) => (
+          <div
+            key={i}
+            className="flex-1 bg-gradient-to-t from-gold/30 to-gold/10 rounded-t"
+            style={{ height: `${h}%` }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CustomSoftwareVisual() {
+  return (
+    <div className="w-full max-w-sm">
+      <div className="rounded-xl border border-gold/15 bg-black/40 overflow-hidden shadow-2xl">
+        {/* Editor tab bar */}
+        <div className="flex items-center gap-0 border-b border-gold/10 bg-black/60">
+          <div className="px-4 py-2 text-[10px] text-gold-muted font-light border-b border-gold/30 bg-black/40">app.tsx</div>
+          <div className="px-4 py-2 text-[10px] text-muted/30 font-light">api.ts</div>
+          <div className="px-4 py-2 text-[10px] text-muted/30 font-light">db.ts</div>
+        </div>
+        {/* Code lines */}
+        <div className="p-4 space-y-1.5 font-mono">
+          {[
+            { num: "1", indent: 0, segments: [{ w: "w-12", c: "bg-purple-400/30" }, { w: "w-20", c: "bg-blue-400/20" }] },
+            { num: "2", indent: 1, segments: [{ w: "w-16", c: "bg-green-400/20" }, { w: "w-24", c: "bg-white/8" }] },
+            { num: "3", indent: 2, segments: [{ w: "w-10", c: "bg-gold/25" }, { w: "w-16", c: "bg-white/8" }, { w: "w-8", c: "bg-cyan-400/20" }] },
+            { num: "4", indent: 2, segments: [{ w: "w-14", c: "bg-orange-400/20" }, { w: "w-20", c: "bg-white/8" }] },
+            { num: "5", indent: 1, segments: [{ w: "w-6", c: "bg-purple-400/30" }] },
+            { num: "6", indent: 0, segments: [] },
+            { num: "7", indent: 0, segments: [{ w: "w-16", c: "bg-purple-400/30" }, { w: "w-14", c: "bg-gold/25" }] },
+            { num: "8", indent: 1, segments: [{ w: "w-20", c: "bg-green-400/20" }, { w: "w-10", c: "bg-white/8" }] },
+          ].map((line) => (
+            <div key={line.num} className="flex items-center gap-3">
+              <span className="text-[10px] text-muted/20 w-4 text-right shrink-0">{line.num}</span>
+              <div className="flex items-center gap-1.5" style={{ paddingLeft: `${line.indent * 12}px` }}>
+                {line.segments.map((seg, i) => (
+                  <div key={i} className={`h-2.5 ${seg.w} ${seg.c} rounded-sm`} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Terminal */}
+        <div className="border-t border-gold/10 bg-black/60 p-3">
+          <div className="flex items-center gap-2 text-[10px] font-light">
+            <span className="text-green-400/60">$</span>
+            <span className="text-muted/40">build successful</span>
+            <span className="text-green-400/50">&#10003;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const serviceVisuals = [WebDevVisual, HostingVisual, SEOVisual, CustomSoftwareVisual];
+
 const services = [
   {
     title: "Website Development",
@@ -77,10 +280,8 @@ export default function Services() {
                   ))}
                 </ul>
               </div>
-              <div className={`card-premium rounded-2xl p-12 flex items-center justify-center min-h-[300px] ${index % 2 === 1 ? "lg:order-1" : ""}`}>
-                <svg className="w-24 h-24 text-gold/15" fill="none" stroke="currentColor" strokeWidth={0.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d={service.icon} />
-                </svg>
+              <div className={`card-premium rounded-2xl p-8 lg:p-12 flex items-center justify-center min-h-[300px] ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                {(() => { const Visual = serviceVisuals[index]; return <Visual />; })()}
               </div>
             </div>
           ))}
