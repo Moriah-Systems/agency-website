@@ -29,7 +29,8 @@ export const metadata: Metadata = {
     "custom software",
     "digital solutions",
     "Moriah Systems",
-    "Sri Lanka",
+    "business website",
+    "affordable web development",
   ],
   openGraph: {
     type: "website",
@@ -62,7 +63,7 @@ export default function RootLayout({
               url: "https://moriahsystems.com",
               description:
                 "We build professional websites and custom software for businesses.",
-              email: "dinuwan@moriahsystems.com",
+              email: "moriahsystems@gmail.com",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "LK",

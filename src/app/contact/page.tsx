@@ -5,27 +5,52 @@ import { useState, type FormEvent } from "react";
 const contactInfo = [
   {
     label: "Email",
-    value: "dinuwan@moriahsystems.com",
+    value: "moriahsystems@gmail.com",
     icon: "M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75",
   },
   {
-    label: "Location",
-    value: "Sri Lanka",
-    icon: "M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z",
+    label: "Response Time",
+    value: "Within 24 hours",
+    icon: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
   },
   {
     label: "Availability",
-    value: "Mon - Sat, 9am - 6pm",
-    icon: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z",
+    value: "Mon - Sat, 9am - 6pm GMT+5:30",
+    icon: "M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5",
   },
 ];
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please email us directly.");
+      }
+    } catch {
+      setError("Something went wrong. Please email us directly.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -63,6 +88,11 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                    <input type="hidden" name="subject" value="New inquiry from Moriah Systems website" />
+                    <input type="hidden" name="from_name" value="Moriah Systems Website" />
+                    <input type="checkbox" name="botcheck" className="hidden" />
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Name</label>
@@ -123,11 +153,15 @@ export default function Contact() {
                         placeholder="Tell us about your project..."
                       />
                     </div>
+                    {error && (
+                      <p className="text-red-400 text-sm font-light">{error}</p>
+                    )}
                     <button
                       type="submit"
-                      className="btn-premium w-full py-4 text-xs tracking-[0.15em]"
+                      disabled={sending}
+                      className="btn-premium w-full py-4 text-xs tracking-[0.15em] disabled:opacity-50"
                     >
-                      Send Message
+                      {sending ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}
