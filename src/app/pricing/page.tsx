@@ -151,7 +151,7 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <Link
-                  href="/contact"
+                  href={`/contact?package=${pkg.name}`}
                   className={`block text-center py-3.5 mt-10 text-xs tracking-[0.15em] uppercase font-light transition-all duration-300 ${
                     pkg.highlighted
                       ? "btn-premium"

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 const contactInfo = [
   {
@@ -20,7 +21,9 @@ const contactInfo = [
   },
 ];
 
-export default function Contact() {
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const selectedPackage = searchParams.get("package");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
@@ -53,6 +56,114 @@ export default function Contact() {
     }
   }
 
+  if (submitted) {
+    return (
+      <div className="text-center py-16">
+        <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+        </div>
+        <h3 className="font-heading text-2xl font-light tracking-wide mb-3">Message Sent</h3>
+        <p className="text-muted/60 font-light">We&apos;ll get back to you within 24 hours.</p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <input type="hidden" name="access_key" value="c34d3ac9-6e87-41e1-a309-75244e0a710b" />
+      <input type="hidden" name="subject" value={selectedPackage ? `New inquiry – ${selectedPackage} Package` : "New inquiry from Moriah Systems website"} />
+      <input type="hidden" name="from_name" value="Moriah Systems Website" />
+      {selectedPackage && <input type="hidden" name="Selected Package" value={selectedPackage} />}
+      <input type="checkbox" name="botcheck" className="hidden" />
+
+      {selectedPackage && (
+        <div className="flex items-center gap-3 p-4 rounded-lg border border-gold/20 bg-gold/5">
+          <svg className="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+          </svg>
+          <p className="text-sm font-light">
+            <span className="text-gold">{selectedPackage}</span> package selected
+          </p>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="name" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
+            placeholder="Your name"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
+            placeholder="your@email.com"
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="business" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Business Name</label>
+        <input
+          type="text"
+          id="business"
+          name="business"
+          className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
+          placeholder="Your business name (optional)"
+        />
+      </div>
+      <div>
+        <label htmlFor="service" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Service Interested In</label>
+        <select
+          id="service"
+          name="service"
+          className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light"
+        >
+          <option value="">Select a service</option>
+          <option value="website">Website Development</option>
+          <option value="maintenance">Maintenance &amp; Hosting</option>
+          <option value="seo">Content &amp; SEO</option>
+          <option value="software">Custom Software</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows={5}
+          required
+          className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30 resize-none"
+          placeholder="Tell us about your project..."
+        />
+      </div>
+      {error && (
+        <p className="text-red-400 text-sm font-light">{error}</p>
+      )}
+      <button
+        type="submit"
+        disabled={sending}
+        className="btn-premium w-full py-4 text-xs tracking-[0.15em] disabled:opacity-50"
+      >
+        {sending ? "Sending..." : "Send Message"}
+      </button>
+    </form>
+  );
+}
+
+export default function Contact() {
   return (
     <>
       {/* Hero */}
@@ -76,95 +187,9 @@ export default function Contact() {
             {/* Form */}
             <div className="lg:col-span-2 scroll-reveal">
               <div className="card-premium rounded-2xl p-8 lg:p-10">
-                {submitted ? (
-                  <div className="text-center py-16">
-                    <div className="w-16 h-16 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                      </svg>
-                    </div>
-                    <h3 className="font-heading text-2xl font-light tracking-wide mb-3">Message Sent</h3>
-                    <p className="text-muted/60 font-light">We&apos;ll get back to you within 24 hours.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <input type="hidden" name="access_key" value="c34d3ac9-6e87-41e1-a309-75244e0a710b" />
-                    <input type="hidden" name="subject" value="New inquiry from Moriah Systems website" />
-                    <input type="hidden" name="from_name" value="Moriah Systems Website" />
-                    <input type="checkbox" name="botcheck" className="hidden" />
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Name</label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          required
-                          className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Email</label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          required
-                          className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
-                          placeholder="your@email.com"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label htmlFor="business" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Business Name</label>
-                      <input
-                        type="text"
-                        id="business"
-                        name="business"
-                        className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30"
-                        placeholder="Your business name (optional)"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="service" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Service Interested In</label>
-                      <select
-                        id="service"
-                        name="service"
-                        className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="website">Website Development</option>
-                        <option value="maintenance">Maintenance & Hosting</option>
-                        <option value="seo">Content & SEO</option>
-                        <option value="software">Custom Software</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-xs font-light tracking-[0.1em] uppercase text-muted/60 mb-3">Message</label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                        className="w-full px-4 py-3.5 bg-black/40 border border-white/5 rounded-lg focus:outline-none focus:border-gold/40 transition-colors text-white font-light placeholder:text-muted/30 resize-none"
-                        placeholder="Tell us about your project..."
-                      />
-                    </div>
-                    {error && (
-                      <p className="text-red-400 text-sm font-light">{error}</p>
-                    )}
-                    <button
-                      type="submit"
-                      disabled={sending}
-                      className="btn-premium w-full py-4 text-xs tracking-[0.15em] disabled:opacity-50"
-                    >
-                      {sending ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
-                )}
+                <Suspense>
+                  <ContactForm />
+                </Suspense>
               </div>
             </div>
 
