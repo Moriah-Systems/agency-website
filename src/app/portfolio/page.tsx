@@ -160,14 +160,92 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* More Projects Coming */}
+      {/* More Projects */}
+      <div className="section-divider" />
+      <section className="py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16 scroll-reveal">
+            <div className="overline-decorated mb-6">
+              <span className="text-gold-muted text-xs tracking-[0.3em] uppercase font-light">More Work</span>
+            </div>
+            <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide">Concept Projects</h2>
+            <p className="text-muted/60 mt-4 font-light max-w-lg mx-auto">
+              Industry-specific designs showcasing what we build for different business types.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal">
+            {[
+              {
+                name: "Sunrise Cafe",
+                industry: "Restaurant / Cafe",
+                location: "Melbourne, Australia",
+                desc: "Warm, inviting brunch spot website with online menu, table booking, and Google reviews integration.",
+                tech: ["Next.js", "React", "Tailwind CSS"],
+                href: "/demos/sunrise-cafe",
+                color: "from-amber-500/20 to-amber-600/5",
+                accent: "text-amber-400",
+                accentBg: "bg-amber-500/10 border-amber-500/20 text-amber-400",
+              },
+              {
+                name: "Brighton Dental",
+                industry: "Healthcare / Dental",
+                location: "Brighton, UK",
+                desc: "Professional dental practice website with appointment booking, service listings, and patient reviews.",
+                tech: ["Next.js", "React", "Tailwind CSS"],
+                href: "/demos/brighton-dental",
+                color: "from-blue-500/20 to-blue-600/5",
+                accent: "text-blue-400",
+                accentBg: "bg-blue-500/10 border-blue-500/20 text-blue-400",
+              },
+              {
+                name: "Peak Plumbing",
+                industry: "Trades / Plumbing",
+                location: "Sydney, Australia",
+                desc: "Trust-building tradesman website with service areas, quote requests, emergency callouts, and reviews.",
+                tech: ["Next.js", "React", "Tailwind CSS"],
+                href: "/demos/peak-plumbing",
+                color: "from-orange-500/20 to-orange-600/5",
+                accent: "text-orange-400",
+                accentBg: "bg-orange-500/10 border-orange-500/20 text-orange-400",
+              },
+            ].map((project) => (
+              <Link
+                key={project.name}
+                href={project.href}
+                target="_blank"
+                className="card-premium rounded-2xl overflow-hidden group hover:border-gold/20 transition-all duration-300"
+              >
+                <div className={`bg-gradient-to-br ${project.color} p-8 flex items-center justify-center h-44`}>
+                  <span className={`font-heading text-xl font-light tracking-wide ${project.accent}`}>{project.name}</span>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-heading text-lg font-normal tracking-wide">{project.name}</h3>
+                    <svg className="w-4 h-4 text-muted/30 group-hover:text-gold-muted transition" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                    </svg>
+                  </div>
+                  <p className="text-xs text-muted/40 font-light mb-3">{project.industry} — {project.location}</p>
+                  <p className="text-sm text-muted/60 font-light leading-relaxed mb-4">{project.desc}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.map((t) => (
+                      <span key={t} className={`px-2 py-0.5 text-[10px] font-light border rounded-full ${project.accentBg}`}>{t}</span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
       <div className="section-divider" />
       <section className="py-32">
         <div className="max-w-3xl mx-auto px-6 text-center scroll-reveal">
-          <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide mb-8">More Projects Coming Soon</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-light tracking-wide mb-8">Want Something Like This?</h2>
           <p className="text-muted/70 text-base md:text-lg mb-12 font-light leading-relaxed">
-            We&apos;re building digital solutions for more businesses every month.
-            Want to be our next success story?
+            Every business is unique. Let us build a custom website tailored to your industry and audience.
           </p>
           <Link href="/contact" className="btn-premium px-12 py-4 text-xs tracking-[0.15em]">
             Start Your Project
