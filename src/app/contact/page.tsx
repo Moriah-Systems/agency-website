@@ -88,7 +88,7 @@ export default function Contact() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+                    <input type="hidden" name="access_key" value="c34d3ac9-6e87-41e1-a309-75244e0a710b" />
                     <input type="hidden" name="subject" value="New inquiry from Moriah Systems website" />
                     <input type="hidden" name="from_name" value="Moriah Systems Website" />
                     <input type="checkbox" name="botcheck" className="hidden" />
