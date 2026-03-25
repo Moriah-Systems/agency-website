@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -44,6 +45,34 @@ export default function Portfolio() {
                     </span>
                   ))}
                 </div>
+              </div>
+            </div>
+
+            {/* Project Screenshots */}
+            <div className="p-8 lg:p-12 border-b border-gold/10">
+              <h4 className="text-gold-muted font-light text-xs uppercase tracking-[0.2em] mb-6">Screenshots</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  { src: "/projects/dimuthu-electronics.png", alt: "Homepage — hero section and storefront" },
+                  { src: "/projects/dimuthu-products.png", alt: "Products — catalog with pricing" },
+                  { src: "/projects/dimuthu-booking.png", alt: "Book Appointment — scheduling form" },
+                  { src: "/projects/dimuthu-reviews.png", alt: "Reviews — Google reviews integration" },
+                  { src: "/projects/dimuthu-electronics2.png", alt: "Workshop — video reels gallery" },
+                  { src: "/projects/dimuthu-desktop-app.png", alt: "Desktop App — business manager dashboard" },
+                ].map((img) => (
+                  <div key={img.src} className="group relative rounded-lg overflow-hidden border border-gold/10 bg-black/30">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      width={1280}
+                      height={800}
+                      className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 py-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-xs font-light text-white/80">{img.alt}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
