@@ -47,7 +47,7 @@ export default function Footer() {
           <div>
             <h4 className="text-gold-muted font-light text-xs uppercase tracking-[0.2em] mb-5">Get in Touch</h4>
             <ul className="space-y-2 text-muted/60 text-sm font-light">
-              <li>moriahsystems@gmail.com</li>
+              <li>contact@moriahsystems.com</li>
             </ul>
           </div>
         </div>

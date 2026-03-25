@@ -63,7 +63,7 @@ export default function RootLayout({
               url: "https://moriahsystems.com",
               description:
                 "We build professional websites and custom software for businesses.",
-              email: "moriahsystems@gmail.com",
+              email: "contact@moriahsystems.com",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "LK",
