@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const setupPackages = [
   {
     name: "Starter",
-    price: "LKR 75,000",
+    price: "$499",
     description: "Perfect for small businesses that need a professional online presence.",
     features: [
       "3-5 page website",
@@ -23,7 +23,7 @@ const setupPackages = [
   },
   {
     name: "Business",
-    price: "LKR 150,000",
+    price: "$999",
     description: "For growing businesses that need more features and content.",
     features: [
       "5-10 page website",
@@ -38,7 +38,7 @@ const setupPackages = [
   },
   {
     name: "Premium",
-    price: "LKR 300,000+",
+    price: "$2,499+",
     description: "Custom solutions for businesses with specific needs.",
     features: [
       "Unlimited pages",
@@ -56,7 +56,7 @@ const setupPackages = [
 const retainerPackages = [
   {
     name: "Basic Care",
-    price: "LKR 7,500",
+    price: "$49",
     period: "/month",
     features: [
       "Hosting & domain management",
@@ -69,7 +69,7 @@ const retainerPackages = [
   },
   {
     name: "Growth",
-    price: "LKR 15,000",
+    price: "$99",
     period: "/month",
     features: [
       "Everything in Basic Care",
@@ -82,7 +82,7 @@ const retainerPackages = [
   },
   {
     name: "Full Service",
-    price: "LKR 30,000",
+    price: "$199",
     period: "/month",
     features: [
       "Everything in Growth",
