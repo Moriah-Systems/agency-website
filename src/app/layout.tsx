@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Hebron Enterprises | Digital Solutions That Matter",
-    template: "%s | Hebron Enterprises",
+    default: "Moriah Systems | Digital Solutions That Matter",
+    template: "%s | Moriah Systems",
   },
   description:
     "We build professional websites and custom software for businesses. From design to deployment, we handle everything so you can focus on what matters.",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     "website design",
     "custom software",
     "digital solutions",
-    "Hebron Enterprises",
+    "Moriah Systems",
     "Sri Lanka",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "Hebron Enterprises",
-    title: "Hebron Enterprises | Digital Solutions That Matter",
+    siteName: "Moriah Systems",
+    title: "Moriah Systems | Digital Solutions That Matter",
     description:
       "We build professional websites and custom software for businesses.",
   },
@@ -58,11 +58,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
-              name: "Hebron Enterprises",
-              url: "https://hebronenterprises.com",
+              name: "Moriah Systems",
+              url: "https://moriahsystems.com",
               description:
                 "We build professional websites and custom software for businesses.",
-              email: "dinuwan@hebronenterprises.com",
+              email: "dinuwan@moriahsystems.com",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "LK",

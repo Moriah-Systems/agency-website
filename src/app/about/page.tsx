@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about Hebron Enterprises, our mission, story, and why businesses trust us with their digital presence.",
+  description: "Learn about Moriah Systems, our mission, story, and why businesses trust us with their digital presence.",
 };
 
 const values = [
@@ -39,11 +39,12 @@ export default function About() {
             <span className="text-gold-muted text-xs tracking-[0.3em] uppercase font-light">About Us</span>
           </div>
           <h1 className="font-heading text-4xl md:text-6xl font-light tracking-wide mb-8">
-            Built to Last. Driven by Excellence.
+            Built on Faith. Driven by Excellence.
           </h1>
           <p className="text-muted/80 text-base md:text-lg max-w-xl mx-auto font-light leading-relaxed">
-            Hebron Enterprises builds digital foundations for businesses
-            with a commitment to precision, quality, and enduring results.
+            Named after Mount Moriah, the place of faith and the foundation
+            of Solomon&apos;s temple. We build digital foundations for businesses with the same
+            commitment to excellence.
           </p>
         </div>
       </section>
@@ -55,7 +56,7 @@ export default function About() {
             <h2 className="font-heading text-2xl md:text-3xl font-light tracking-wide mb-8">Our Story</h2>
             <div className="space-y-5 text-muted/70 leading-relaxed font-light">
               <p>
-                Hebron Enterprises was founded with a simple observation: too many businesses are invisible online.
+                Moriah Systems was founded with a simple observation: too many businesses are invisible online.
                 Restaurants with incredible food, shops with quality products, professionals with years of experience,
                 all missing out because they don&apos;t have a digital presence.
               </p>
@@ -74,21 +75,21 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why Hebron */}
+      {/* Why Moriah */}
       <div className="section-divider" />
       <section className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12 scroll-reveal">
-            <h2 className="font-heading text-2xl md:text-3xl font-light tracking-wide">Why &quot;Hebron&quot;?</h2>
+            <h2 className="font-heading text-2xl md:text-3xl font-light tracking-wide">Why &quot;Moriah&quot;?</h2>
           </div>
           <div className="card-premium rounded-2xl p-8 lg:p-14 border-gold/15 scroll-reveal">
             <p className="text-muted/70 leading-relaxed text-lg text-center font-light">
-              The name Hebron evokes <span className="text-gold font-normal">strength</span>,{" "}
-              <span className="text-gold font-normal">heritage</span>, and{" "}
-              <span className="text-gold font-normal">enduring quality</span>.
-              Like a well-built estate that stands for generations, we build digital foundations
-              designed to last. Every project we take on carries that same standard of
-              craftsmanship and permanence.
+              Mount Moriah is where Abraham&apos;s faith was tested and proven.
+              It&apos;s where Solomon built his temple, one of the most magnificent structures in history.
+              The name represents <span className="text-gold font-normal">faith</span>,{" "}
+              <span className="text-gold font-normal">foundation</span>, and{" "}
+              <span className="text-gold font-normal">building something that endures</span>.
+              That&apos;s exactly what we do for every client: build digital foundations that last.
             </p>
           </div>
         </div>
