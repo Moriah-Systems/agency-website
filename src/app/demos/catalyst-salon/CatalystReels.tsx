@@ -61,7 +61,7 @@ export default function CatalystReels() {
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
-    const cardWidth = window.innerWidth < 640 ? 165 : window.innerWidth < 768 ? 230 : 310;
+    const cardWidth = window.innerWidth < 640 ? window.innerWidth * 0.44 + 12 : window.innerWidth < 768 ? 230 : 310;
     scrollRef.current.scrollBy({
       left: direction === "left" ? -cardWidth : cardWidth,
       behavior: "smooth",
@@ -113,7 +113,7 @@ export default function CatalystReels() {
             key={reel.fbUrl}
             className="snap-center shrink-0 first:ml-4 last:mr-4 sm:first:ml-0 sm:last:mr-0"
           >
-            <div className="relative w-[155px] h-[276px] sm:w-[220px] sm:h-[391px] md:w-[300px] md:h-[534px] rounded-2xl overflow-hidden border border-[#C9A96E]/10 hover:border-[#C9A96E]/30 transition-all duration-300 hover:scale-[1.02]">
+            <div className="relative w-[44vw] h-[78vw] sm:w-[220px] sm:h-[391px] md:w-[300px] md:h-[534px] rounded-2xl overflow-hidden border border-[#C9A96E]/10 hover:border-[#C9A96E]/30 transition-all duration-300 hover:scale-[1.02]">
               <video
                 ref={(el) => { videoRefs.current[i] = el; }}
                 src={reel.video}
