@@ -125,26 +125,28 @@ export default function CatalystSalon() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-24 px-6">
+      <section id="services" className="py-14 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#C9A96E] text-xs font-medium tracking-[0.3em] uppercase">What We Offer</span>
-            <h2 className="text-3xl md:text-4xl font-light mt-3 tracking-wide">Our Services</h2>
+          <div className="text-center mb-8 md:mb-12">
+            <span className="text-[#C9A96E] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">What We Offer</span>
+            <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Our Services</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
             {[
-              { icon: "&#9986;", name: "Hair Styling", desc: "Cuts, blowouts, and styling for all hair types. From casual looks to red carpet ready transformations.", price: "From Rs. 500" },
-              { icon: "&#127912;", name: "Hair Coloring", desc: "Balayage, highlights, global coloring, and custom color blending. We use premium products for vibrant, lasting results.", price: "From Rs. 3,000" },
-              { icon: "&#128142;", name: "Bridal Packages", desc: "Complete bridal makeovers including hair, makeup, and dressing. We make your special day truly unforgettable.", price: "From Rs. 15,000" },
-              { icon: "&#10024;", name: "Hair Treatments", desc: "Keratin treatments, deep conditioning, scalp care, and damage repair using top international products.", price: "From Rs. 2,000" },
-              { icon: "&#128132;", name: "Makeup Services", desc: "Professional makeup for events, photoshoots, and everyday glam. Natural to full coverage looks available.", price: "From Rs. 2,500" },
-              { icon: "&#128134;", name: "Grooming for Men", desc: "Premium haircuts, beard trimming, facials, and grooming packages designed for the modern gentleman.", price: "From Rs. 400" },
+              { icon: "&#9986;", name: "Hair Styling", desc: "Cuts, blowouts, and styling for all hair types", price: "From Rs. 500" },
+              { icon: "&#127912;", name: "Hair Coloring", desc: "Balayage, highlights, global coloring, and custom blending", price: "From Rs. 3,000" },
+              { icon: "&#128142;", name: "Bridal Packages", desc: "Complete bridal makeovers including hair, makeup, and dressing", price: "From Rs. 15,000" },
+              { icon: "&#10024;", name: "Hair Treatments", desc: "Keratin, deep conditioning, scalp care, and damage repair", price: "From Rs. 2,000" },
+              { icon: "&#128132;", name: "Makeup Services", desc: "Professional makeup for events, photoshoots, and everyday glam", price: "From Rs. 2,500" },
+              { icon: "&#128134;", name: "Grooming for Men", desc: "Premium haircuts, beard trimming, facials, and grooming", price: "From Rs. 400" },
             ].map((service) => (
-              <div key={service.name} className="group bg-[#111] border border-[#C9A96E]/10 rounded-lg p-8 hover:border-[#C9A96E]/30 transition-all duration-300">
-                <div className="text-3xl mb-5" dangerouslySetInnerHTML={{ __html: service.icon }} />
-                <h3 className="font-medium text-lg mb-2 tracking-wide text-[#F5F0EB]">{service.name}</h3>
-                <p className="text-sm text-[#F5F0EB]/40 leading-relaxed mb-4">{service.desc}</p>
-                <span className="text-xs text-[#C9A96E] font-medium tracking-wider">{service.price}</span>
+              <div key={service.name} className="group flex items-center gap-4 bg-[#111] border border-[#C9A96E]/10 rounded-lg px-5 py-4 hover:border-[#C9A96E]/30 transition-all duration-300">
+                <div className="text-2xl shrink-0" dangerouslySetInnerHTML={{ __html: service.icon }} />
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-medium text-sm md:text-base tracking-wide text-[#F5F0EB]">{service.name}</h3>
+                  <p className="text-xs text-[#F5F0EB]/40 leading-relaxed mt-0.5 hidden md:block">{service.desc}</p>
+                </div>
+                <span className="text-[10px] md:text-xs text-[#C9A96E] font-medium tracking-wider shrink-0">{service.price}</span>
               </div>
             ))}
           </div>
