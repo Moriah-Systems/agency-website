@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 const setupPackages = [
   {
     name: "Starter",
-    price: "Rs. 49,000",
-    usd: "$149",
+    price: "Rs. 55,000",
+    usd: "$175",
     description: "Perfect for small businesses that need a professional online presence.",
     features: [
       "3-5 page website",
@@ -24,8 +24,8 @@ const setupPackages = [
   },
   {
     name: "Business",
-    price: "Rs. 95,000",
-    usd: "$299",
+    price: "Rs. 135,000",
+    usd: "$425",
     description: "For growing businesses that need more features and content.",
     features: [
       "5-10 page website",
@@ -39,8 +39,8 @@ const setupPackages = [
   },
   {
     name: "Premium",
-    price: "Rs. 175,000+",
-    usd: "$549+",
+    price: "Rs. 250,000+",
+    usd: "$785+",
     description: "Custom websites and software tailored to your business needs.",
     features: [
       "Unlimited pages",
@@ -58,8 +58,8 @@ const setupPackages = [
 const retainerPackages = [
   {
     name: "Basic Care",
-    price: "Rs. 5,000",
-    usd: "$19",
+    price: "Rs. 7,500",
+    usd: "$25",
     period: "/month",
     features: [
       "Hosting & domain management",
@@ -72,8 +72,8 @@ const retainerPackages = [
   },
   {
     name: "Growth",
-    price: "Rs. 12,000",
-    usd: "$39",
+    price: "Rs. 15,000",
+    usd: "$49",
     period: "/month",
     features: [
       "Everything in Basic Care",
@@ -86,8 +86,8 @@ const retainerPackages = [
   },
   {
     name: "Full Service",
-    price: "Rs. 25,000",
-    usd: "$79",
+    price: "Rs. 35,000",
+    usd: "$110",
     period: "/month",
     features: [
       "Everything in Growth",
