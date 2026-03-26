@@ -8,9 +8,9 @@ export default function CatalystSalon() {
     <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", background: "#0A0A0A", color: "#F5F0EB" }}>
       {/* Nav */}
       <nav className="fixed top-0 inset-x-0 z-50 bg-[#0A0A0A]/95 backdrop-blur border-b border-[#C9A96E]/10">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 h-14 md:h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Image src="/catalyst/logo.jpg" alt="Catalyst By Buddhika" width={140} height={40} className="h-8 w-auto" />
+            <Image src="/catalyst/logo.jpg" alt="Catalyst By Buddhika" width={140} height={40} className="h-6 md:h-8 w-auto" />
           </div>
           <div className="hidden md:flex gap-8 text-sm text-[#F5F0EB]/60">
             <a href="#services" className="hover:text-[#C9A96E] transition">Services</a>
@@ -19,65 +19,75 @@ export default function CatalystSalon() {
             <a href="#founder" className="hover:text-[#C9A96E] transition">Our Story</a>
             <a href="#contact" className="hover:text-[#C9A96E] transition">Contact</a>
           </div>
-          <a href="#booking" className="bg-gradient-to-r from-[#C9A96E] to-[#B8963E] text-[#0A0A0A] text-sm px-6 py-2 rounded-sm hover:opacity-90 transition font-medium tracking-wide">
-            Book Now
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="tel:0771780811" className="md:hidden w-9 h-9 rounded-full border border-[#C9A96E]/30 flex items-center justify-center">
+              <svg className="w-4 h-4 text-[#C9A96E]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
+            </a>
+            <a href="#booking" className="bg-gradient-to-r from-[#C9A96E] to-[#B8963E] text-[#0A0A0A] text-xs md:text-sm px-4 md:px-6 py-2 rounded-sm hover:opacity-90 transition font-medium tracking-wide">
+              Book Now
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-16 min-h-screen flex items-center">
+      <section className="relative pt-14 md:pt-16 min-h-[90vh] md:min-h-screen flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0A] via-[#111] to-[#0A0A0A]" />
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #C9A96E 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        <div className="relative max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 border border-[#C9A96E]/20 text-[#C9A96E] text-xs font-medium px-4 py-2 rounded-sm mb-8 tracking-[0.2em] uppercase">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 border border-[#C9A96E]/20 text-[#C9A96E] text-[10px] md:text-xs font-medium px-3 md:px-4 py-1.5 md:py-2 rounded-sm mb-5 md:mb-8 tracking-[0.2em] uppercase">
               Premium Hair & Beauty
             </div>
-            <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight tracking-wide">
+            <h1 className="text-3xl md:text-6xl font-light mb-4 md:mb-6 leading-tight tracking-wide">
               Where <span className="font-normal" style={{ background: "linear-gradient(135deg, #C9A96E, #E8D5A3, #C9A96E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Confidence</span>
               <br />Meets Style
             </h1>
-            <p className="text-[#F5F0EB]/50 text-lg mb-10 max-w-md leading-relaxed">
+            <p className="text-[#F5F0EB]/50 text-sm md:text-lg mb-6 md:mb-10 max-w-md mx-auto lg:mx-0 leading-relaxed">
               Experience the art of transformation at Ja-Ela's most trusted salon. From stunning hair makeovers to bridal perfection, we bring out the best version of you.
             </p>
-            <div className="flex gap-4">
-              <a href="#booking" className="bg-gradient-to-r from-[#C9A96E] to-[#B8963E] text-[#0A0A0A] px-10 py-3.5 rounded-sm text-sm font-medium tracking-wider uppercase hover:opacity-90 transition">
+            <div className="flex gap-3 md:gap-4 justify-center lg:justify-start">
+              <a href="#booking" className="bg-gradient-to-r from-[#C9A96E] to-[#B8963E] text-[#0A0A0A] px-6 md:px-10 py-3 md:py-3.5 rounded-sm text-xs md:text-sm font-medium tracking-wider uppercase hover:opacity-90 transition">
                 Book Appointment
               </a>
-              <a href="tel:0771780811" className="border border-[#C9A96E]/30 text-[#C9A96E] px-8 py-3.5 rounded-sm text-sm font-medium tracking-wider uppercase hover:bg-[#C9A96E]/5 transition flex items-center gap-2">
+              <a href="tel:0771780811" className="border border-[#C9A96E]/30 text-[#C9A96E] px-5 md:px-8 py-3 md:py-3.5 rounded-sm text-xs md:text-sm font-medium tracking-wider uppercase hover:bg-[#C9A96E]/5 transition flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" /></svg>
                 Call Us
               </a>
             </div>
           </div>
           <div className="relative">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="space-y-3">
+            <div className="grid grid-cols-3 lg:grid-cols-2 gap-2 md:gap-3">
+              <div className="space-y-2 md:space-y-3">
                 <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10">
                   <Image src="/catalyst/work2.jpg" alt="Hair styling" width={400} height={500} className="w-full h-auto object-cover" />
                 </div>
+                <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10 hidden lg:block">
+                  <Image src="/catalyst/work5.jpg" alt="Hair coloring" width={400} height={500} className="w-full h-auto object-cover" />
+                </div>
+              </div>
+              <div className="space-y-2 md:space-y-3 mt-4 lg:mt-8">
+                <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10">
+                  <Image src="/catalyst/work3.jpg" alt="Red hair transformation" width={400} height={500} className="w-full h-auto object-cover" />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10 hidden lg:block">
+                  <Image src="/catalyst/work4.jpg" alt="Burgundy curls" width={400} height={500} className="w-full h-auto object-cover" />
+                </div>
+              </div>
+              <div className="space-y-2 md:space-y-3 mt-8 lg:hidden">
                 <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10">
                   <Image src="/catalyst/work5.jpg" alt="Hair coloring" width={400} height={500} className="w-full h-auto object-cover" />
                 </div>
               </div>
-              <div className="space-y-3 mt-8">
-                <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10">
-                  <Image src="/catalyst/work3.jpg" alt="Red hair transformation" width={400} height={500} className="w-full h-auto object-cover" />
-                </div>
-                <div className="rounded-lg overflow-hidden border border-[#C9A96E]/10">
-                  <Image src="/catalyst/work4.jpg" alt="Burgundy curls" width={400} height={500} className="w-full h-auto object-cover" />
-                </div>
-              </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-[#131313] border border-[#C9A96E]/20 rounded-lg p-4 shadow-2xl">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#C9A96E] to-[#B8963E] flex items-center justify-center text-[#0A0A0A] text-xs font-bold">
+            <div className="absolute -bottom-4 left-0 md:-bottom-6 md:-left-6 bg-[#131313] border border-[#C9A96E]/20 rounded-lg p-3 md:p-4 shadow-2xl">
+              <div className="flex items-center gap-2 md:gap-3">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-[#C9A96E] to-[#B8963E] flex items-center justify-center text-[#0A0A0A] text-[10px] md:text-xs font-bold">
                   CB
                 </div>
                 <div>
-                  <div className="text-sm font-medium text-[#F5F0EB]">Featured in</div>
-                  <div className="text-xs text-[#C9A96E]">Daily Mirror &bull; The Sun</div>
+                  <div className="text-xs md:text-sm font-medium text-[#F5F0EB]">Featured in</div>
+                  <div className="text-[10px] md:text-xs text-[#C9A96E]">Daily Mirror &bull; The Sun</div>
                 </div>
               </div>
             </div>
@@ -86,12 +96,12 @@ export default function CatalystSalon() {
       </section>
 
       {/* Video Reels */}
-      <section id="reels" className="py-24 px-6">
+      <section id="reels" className="py-12 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-[#C9A96E] text-xs font-medium tracking-[0.3em] uppercase">Watch Us Work</span>
-            <h2 className="text-3xl md:text-4xl font-light mt-3 tracking-wide">Video Reels</h2>
-            <p className="text-[#F5F0EB]/40 mt-4 max-w-md mx-auto">See the magic happen. Watch our styling process and stunning results on video.</p>
+          <div className="text-center mb-8 md:mb-16">
+            <span className="text-[#C9A96E] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Watch Us Work</span>
+            <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Video Reels</h2>
+            <p className="text-[#F5F0EB]/40 mt-2 md:mt-4 text-sm md:text-base max-w-md mx-auto">See the magic happen. Watch our styling process and stunning results on video.</p>
           </div>
           <CatalystReels />
         </div>
