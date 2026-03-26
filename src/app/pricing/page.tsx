@@ -9,13 +9,14 @@ export const metadata: Metadata = {
 const setupPackages = [
   {
     name: "Starter",
-    price: "$799",
+    price: "Rs. 49,000",
+    usd: "$149",
     description: "Perfect for small businesses that need a professional online presence.",
     features: [
       "3-5 page website",
       "Mobile responsive design",
       "Contact form",
-      "Google Maps integration",
+      "Location map integration",
       "Basic SEO setup",
       "Social media links",
     ],
@@ -23,7 +24,8 @@ const setupPackages = [
   },
   {
     name: "Business",
-    price: "$1,999",
+    price: "Rs. 95,000",
+    usd: "$299",
     description: "For growing businesses that need more features and content.",
     features: [
       "5-10 page website",
@@ -31,15 +33,15 @@ const setupPackages = [
       "Blog/news section",
       "Product/service showcase",
       "Advanced SEO optimization",
-      "Google Business Profile setup",
-      "Analytics dashboard",
+      "Website analytics dashboard",
     ],
     highlighted: true,
   },
   {
     name: "Premium",
-    price: "$4,999+",
-    description: "Custom solutions for businesses with specific needs.",
+    price: "Rs. 175,000+",
+    usd: "$549+",
+    description: "Custom websites and software tailored to your business needs.",
     features: [
       "Unlimited pages",
       "Everything in Business",
@@ -56,7 +58,8 @@ const setupPackages = [
 const retainerPackages = [
   {
     name: "Basic Care",
-    price: "$79",
+    price: "Rs. 5,000",
+    usd: "$19",
     period: "/month",
     features: [
       "Hosting & domain management",
@@ -69,12 +72,13 @@ const retainerPackages = [
   },
   {
     name: "Growth",
-    price: "$149",
+    price: "Rs. 12,000",
+    usd: "$39",
     period: "/month",
     features: [
       "Everything in Basic Care",
       "2 SEO blog posts/month",
-      "Google Analytics report",
+      "Website analytics report",
       "Performance optimization",
       "Security patches",
       "Priority email support",
@@ -82,14 +86,15 @@ const retainerPackages = [
   },
   {
     name: "Full Service",
-    price: "$349",
+    price: "Rs. 25,000",
+    usd: "$79",
     period: "/month",
     features: [
       "Everything in Growth",
       "4 blog posts/month",
-      "Social media content",
       "Monthly strategy call",
-      "Feature additions",
+      "New feature additions",
+      "Website redesign updates",
       "Same-day priority support",
     ],
   },
@@ -138,6 +143,7 @@ export default function Pricing() {
                 <h3 className="font-heading text-xl font-normal mb-2 tracking-wide">{pkg.name}</h3>
                 <div className="mb-4">
                   <span className="font-heading text-3xl font-light text-gold">{pkg.price}</span>
+                  <p className="text-muted/40 text-xs font-light mt-1">{pkg.usd} USD</p>
                 </div>
                 <p className="text-muted/60 text-sm mb-8 font-light leading-relaxed">{pkg.description}</p>
                 <ul className="space-y-3 flex-1">
@@ -184,6 +190,7 @@ export default function Pricing() {
                 <div className="mb-6">
                   <span className="font-heading text-3xl font-light text-gold">{pkg.price}</span>
                   <span className="text-muted/50 text-sm font-light">{pkg.period}</span>
+                  <p className="text-muted/40 text-xs font-light mt-1">{pkg.usd}{pkg.period} USD</p>
                 </div>
                 <ul className="space-y-3">
                   {pkg.features.map((feature) => (
