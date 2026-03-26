@@ -9,8 +9,9 @@ export default function CatalystSalon() {
       {/* Nav */}
       <nav className="fixed top-0 inset-x-0 z-50 bg-[#0A0A0A]/95 backdrop-blur border-b border-[#C9A96E]/10">
         <div className="max-w-6xl mx-auto px-4 md:px-6 h-14 md:h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image src="/catalyst/logo.jpg" alt="Catalyst By Buddhika" width={140} height={40} className="h-6 md:h-8 w-auto" />
+          <div className="flex items-center gap-2.5">
+            <Image src="/catalyst/logo.jpg" alt="Catalyst By Buddhika" width={40} height={40} className="h-8 w-8 md:h-9 md:w-9 rounded-full object-cover border border-[#C9A96E]/30" />
+            <span className="text-sm md:text-base font-medium tracking-wide text-[#F5F0EB]">Catalyst <span className="text-[#F5F0EB]/50 font-light">by Buddhika</span></span>
           </div>
           <div className="hidden md:flex gap-8 text-sm text-[#F5F0EB]/60">
             <a href="#services" className="hover:text-[#C9A96E] transition">Services</a>
