@@ -66,7 +66,7 @@ const retainerPackages = [
       "Uptime monitoring",
       "Minor text & image updates",
       "Monthly backup",
-      "Email support",
+      "Email/WhatsApp support",
     ],
   },
   {
@@ -76,11 +76,11 @@ const retainerPackages = [
     period: "/month",
     features: [
       "Everything in Basic Care",
-      "2 SEO blog posts/month",
-      "Website analytics report",
+      "Gallery & content updates",
+      "New services/pricing changes",
       "Performance optimization",
       "Security patches",
-      "Priority email support",
+      "Priority support",
     ],
   },
   {
@@ -90,7 +90,7 @@ const retainerPackages = [
     period: "/month",
     features: [
       "Everything in Growth",
-      "4 blog posts/month",
+      "Blog/SEO content (4 posts/month)",
       "Monthly strategy call",
       "New feature additions",
       "Website redesign updates",
