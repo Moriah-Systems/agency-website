@@ -160,14 +160,14 @@ export default function PortOfPoolClub() {
           {/* Mobile: clean 2-col grid, no spanning. Desktop: 3-col with featured spans */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
             {[
-              { src: "/port-of-pool/hero.webp",      alt: "Pool room interior",                span: "md:col-span-2" },
+              { src: "/port-of-pool/hero.webp",      alt: "Pool room interior",                span: "" },
               { src: "/port-of-pool/action1.webp",   alt: "Game in action",                    span: "" },
               { src: "/port-of-pool/gallery1.webp",  alt: "Players competing",                 span: "" },
               { src: "/port-of-pool/community.webp", alt: "Group of players at the club",      span: "" },
               { src: "/port-of-pool/action2.webp",   alt: "Concentrated shot in play",         span: "" },
               { src: "/port-of-pool/interior.webp",  alt: "Pool table with signature branding",span: "" },
               { src: "/port-of-pool/gallery2.webp",  alt: "Elegant table setup",               span: "" },
-              { src: "/port-of-pool/events.webp",    alt: "Group event at Port of Pool",       span: "md:col-span-2" },
+              { src: "/port-of-pool/events.webp",    alt: "Group event at Port of Pool",       span: "" },
               { src: "/port-of-pool/gaming.webp",    alt: "Gaming zone at the club",           span: "hidden md:block" },
             ].map((img) => (
               <div key={img.src} className={`group relative rounded-lg md:rounded-xl overflow-hidden border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-300 ${img.span}`}>
