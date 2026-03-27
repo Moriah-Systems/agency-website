@@ -221,8 +221,13 @@ export default function PortOfPoolClub() {
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Simple & Affordable</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Table Rates</h2>
             <p className="text-[#F5F0EB]/40 mt-3 md:mt-4 text-sm max-w-md mx-auto">Straightforward pricing — no hidden fees. Just pick up a cue and play.</p>
+            <p className="md:hidden text-[#D4AF37]/40 text-xs mt-3 flex items-center justify-center gap-1.5">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+              Swipe to see all plans
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-4 md:pt-0 pb-4 md:pb-0">
             {[
               {
                 name: "Per Hour",
@@ -249,7 +254,7 @@ export default function PortOfPoolClub() {
                 waMsg: "Hi Port of Pool Club! I'd like to register for a tournament (Rs. 500 entry). Please send me more info. 🎱",
               },
             ].map((plan) => (
-              <div key={plan.name} className={`relative rounded-2xl p-5 md:p-7 border transition-all duration-300 ${plan.highlight ? "border-[#D4AF37]/40 bg-gradient-to-b from-[#166534]/10 to-[#111]" : "border-[#D4AF37]/10 bg-[#111] hover:border-[#D4AF37]/25"}`}>
+              <div key={plan.name} className={`relative flex-shrink-0 w-[80%] md:w-auto snap-start rounded-2xl p-5 md:p-7 border transition-all duration-300 ${plan.highlight ? "border-[#D4AF37]/40 bg-gradient-to-b from-[#166534]/10 to-[#111]" : "border-[#D4AF37]/10 bg-[#111] hover:border-[#D4AF37]/25"}`}>
                 {plan.highlight && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] text-[10px] font-bold px-4 py-1 rounded-full tracking-widest uppercase">
                     Most Popular
