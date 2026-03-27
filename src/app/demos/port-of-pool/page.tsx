@@ -168,7 +168,7 @@ export default function PortOfPoolClub() {
               { src: "/port-of-pool/interior.webp",  alt: "Pool table with signature branding",span: "" },
               { src: "/port-of-pool/gallery2.webp",  alt: "Elegant table setup",               span: "" },
               { src: "/port-of-pool/events.webp",    alt: "Group event at Port of Pool",       span: "md:col-span-2" },
-              { src: "/port-of-pool/gaming.webp",    alt: "Gaming zone at the club",           span: "" },
+              { src: "/port-of-pool/gaming.webp",    alt: "Gaming zone at the club",           span: "hidden md:block" },
             ].map((img) => (
               <div key={img.src} className={`group relative rounded-lg md:rounded-xl overflow-hidden border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-300 ${img.span}`}>
                 <Image
