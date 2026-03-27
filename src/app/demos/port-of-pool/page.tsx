@@ -28,7 +28,7 @@ export default function PortOfPoolClub() {
             <a href="https://wa.me/94000000000" target="_blank" rel="noopener noreferrer" className="md:hidden w-9 h-9 rounded-full border border-[#D4AF37]/30 flex items-center justify-center">
               <svg className="w-4 h-4 text-[#D4AF37]" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-            <a href="#booking" className="bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] text-xs md:text-sm px-4 md:px-6 py-2 rounded-sm hover:opacity-90 transition font-semibold tracking-wide">
+            <a href="#pricing" className="bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] text-xs md:text-sm px-4 md:px-6 py-2 rounded-sm hover:opacity-90 transition font-semibold tracking-wide">
               Book a Table
             </a>
           </div>
@@ -65,7 +65,7 @@ export default function PortOfPoolClub() {
               <span className="text-[#D4AF37]/60 text-xs italic tracking-widest">&ldquo;Stroke it Don&apos;t Poke It&rdquo;</span>
             </div>
             <div className="flex flex-wrap gap-3 md:gap-4">
-              <a href="#booking" className="bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] px-6 md:px-10 py-3 md:py-3.5 rounded-sm text-xs md:text-sm font-semibold tracking-wider uppercase hover:opacity-90 transition">
+              <a href="#pricing" className="bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] px-6 md:px-10 py-3 md:py-3.5 rounded-sm text-xs md:text-sm font-semibold tracking-wider uppercase hover:opacity-90 transition">
                 Book a Table
               </a>
               <a href="#gallery" className="border border-[#D4AF37]/30 text-[#D4AF37] px-5 md:px-8 py-3 md:py-3.5 rounded-sm text-xs md:text-sm font-medium tracking-wider uppercase hover:bg-[#D4AF37]/5 transition">
@@ -230,6 +230,7 @@ export default function PortOfPoolClub() {
                 per: "/ hour",
                 highlight: false,
                 features: ["1–2 players", "Any available table", "Walk-in welcome", "All equipment included"],
+                waMsg: "Hi Port of Pool Club! I'd like to book a table per hour. Please let me know availability. 🎱",
               },
               {
                 name: "Group Package",
@@ -237,6 +238,7 @@ export default function PortOfPoolClub() {
                 per: "/ 4 hrs",
                 highlight: true,
                 features: ["Up to 6 players", "Reserved table", "Discounted hourly rate", "Great for groups & parties"],
+                waMsg: "Hi Port of Pool Club! We're a group and would like to book the Rs. 1,200 group package (4 hrs). Please let me know the details. 🎱",
               },
               {
                 name: "Tournament Entry",
@@ -244,6 +246,7 @@ export default function PortOfPoolClub() {
                 per: "/ entry",
                 highlight: false,
                 features: ["Competitive format", "Prize pool available", "All skill levels", "Registration required"],
+                waMsg: "Hi Port of Pool Club! I'd like to register for a tournament (Rs. 500 entry). Please send me more info. 🎱",
               },
             ].map((plan) => (
               <div key={plan.name} className={`relative rounded-2xl p-5 md:p-7 border transition-all duration-300 ${plan.highlight ? "border-[#D4AF37]/40 bg-gradient-to-b from-[#166534]/10 to-[#111]" : "border-[#D4AF37]/10 bg-[#111] hover:border-[#D4AF37]/25"}`}>
@@ -269,7 +272,13 @@ export default function PortOfPoolClub() {
                     </li>
                   ))}
                 </ul>
-                <a href="#booking" className={`block text-center py-3 rounded-lg text-xs font-semibold tracking-widest uppercase transition ${plan.highlight ? "bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] hover:opacity-90" : "border border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37]/10"}`}>
+                <a
+                  href={`https://wa.me/94000000000?text=${encodeURIComponent(plan.waMsg)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center justify-center gap-2 py-3 rounded-lg text-xs font-semibold tracking-widest uppercase transition ${plan.highlight ? "bg-gradient-to-r from-[#D4AF37] to-[#B8963E] text-[#0A0A0A] hover:opacity-90" : "border border-[#D4AF37]/30 text-[#D4AF37] hover:bg-[#D4AF37]/10"}`}
+                >
+                  <svg className="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                   Book Now
                 </a>
               </div>
@@ -309,73 +318,6 @@ export default function PortOfPoolClub() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Booking */}
-      <section id="booking" className="py-10 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-6 md:mb-12">
-            <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Reserve Your Spot</span>
-            <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Book a Table</h2>
-            <p className="text-[#F5F0EB]/40 mt-3 text-sm max-w-sm mx-auto">Tap your booking type and we&apos;ll open WhatsApp with everything ready — just hit send.</p>
-          </div>
-
-          {/* Quick-tap booking options */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-6">
-            {[
-              {
-                icon: "&#127381;",
-                name: "Per Hour",
-                desc: "1–2 players · Walk-in or reserved",
-                msg: "Hi Port of Pool Club! I'd like to book a table per hour. Please let me know availability. 🎱",
-              },
-              {
-                icon: "&#128101;",
-                name: "Group Package",
-                desc: "Up to 6 players · Great for hangouts",
-                msg: "Hi Port of Pool Club! We're a group and would like to book the group package. Please let me know the details. 🎱",
-              },
-              {
-                icon: "&#127942;",
-                name: "Tournament / Event",
-                desc: "Competitive entry · Private events",
-                msg: "Hi Port of Pool Club! I'm interested in joining a tournament or booking for a private event. Please send me more info. 🎱",
-              },
-            ].map((opt) => (
-              <a
-                key={opt.name}
-                href={`https://wa.me/94000000000?text=${encodeURIComponent(opt.msg)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col gap-3 bg-[#111] border border-[#D4AF37]/10 hover:border-[#D4AF37]/40 hover:bg-[#131313] rounded-2xl p-5 transition-all duration-300"
-              >
-                <div className="text-2xl" dangerouslySetInnerHTML={{ __html: opt.icon }} />
-                <div>
-                  <div className="font-semibold text-sm text-[#F5F0EB] mb-1">{opt.name}</div>
-                  <div className="text-xs text-[#F5F0EB]/40 leading-relaxed">{opt.desc}</div>
-                </div>
-                <div className="mt-auto flex items-center gap-2 text-[#25D366] text-xs font-medium">
-                  <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                  Book via WhatsApp
-                </div>
-              </a>
-            ))}
-          </div>
-
-          {/* Or just chat */}
-          <div className="text-center">
-            <p className="text-[#F5F0EB]/30 text-xs mb-3">or just say hi</p>
-            <a
-              href={`https://wa.me/94000000000?text=${encodeURIComponent("Hi Port of Pool Club! I'd like to make a booking 🎱")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-[#166534]/20 border border-[#25D366]/30 hover:bg-[#166534]/30 transition rounded-xl px-6 py-4"
-            >
-              <svg className="w-5 h-5 text-[#25D366] shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              <span className="text-sm font-medium text-[#F5F0EB]">Open WhatsApp Chat</span>
-            </a>
           </div>
         </div>
       </section>
