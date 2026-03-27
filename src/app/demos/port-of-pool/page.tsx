@@ -36,7 +36,7 @@ export default function PortOfPoolClub() {
       </nav>
 
       {/* Hero */}
-      <section className="relative pt-14 md:pt-16 min-h-[90vh] md:min-h-screen flex items-center overflow-hidden">
+      <section className="relative pt-14 md:pt-16 min-h-[70vh] md:min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="/port-of-pool/hero.webp"
@@ -48,19 +48,19 @@ export default function PortOfPoolClub() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-[#0A0A0A]/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/30" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-12 md:py-0">
+        <div className="relative max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-0">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] md:text-xs font-medium px-3 md:px-4 py-1.5 md:py-2 rounded-sm mb-5 md:mb-8 tracking-[0.2em] uppercase">
+            <div className="inline-flex items-center gap-2 border border-[#D4AF37]/30 text-[#D4AF37] text-[10px] md:text-xs font-medium px-3 md:px-4 py-1.5 md:py-2 rounded-sm mb-4 md:mb-8 tracking-[0.2em] uppercase">
               &#127931; Colombo&apos;s Premier Pool Destination
             </div>
-            <h1 className="text-4xl md:text-7xl font-light mb-4 md:mb-6 leading-tight tracking-wide">
+            <h1 className="text-4xl md:text-7xl font-light mb-3 md:mb-6 leading-tight tracking-wide">
               Where <span className="font-semibold" style={{ background: "linear-gradient(135deg, #D4AF37, #F0D060, #D4AF37)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Champions</span>
               <br />Play
             </h1>
-            <p className="text-[#F5F0EB]/50 text-sm md:text-lg mb-3 max-w-lg leading-relaxed">
+            <p className="text-[#F5F0EB]/50 text-sm md:text-lg mb-2 md:mb-3 max-w-lg leading-relaxed">
               Step into Colombo&apos;s most vibrant billiards and pool club. Professional tables, electric atmosphere, and a community that lives for the game.
             </p>
-            <div className="inline-flex items-center gap-2 mb-6 md:mb-10">
+            <div className="inline-flex items-center gap-2 mb-5 md:mb-10">
               <span className="w-8 border-t border-[#D4AF37]/40" />
               <span className="text-[#D4AF37]/60 text-xs italic tracking-widest">&ldquo;Stroke it Don&apos;t Poke It&rdquo;</span>
             </div>
@@ -74,8 +74,8 @@ export default function PortOfPoolClub() {
             </div>
           </div>
         </div>
-        {/* Floating badge */}
-        <div className="absolute bottom-10 right-6 md:right-12 hidden md:block">
+        {/* Floating badge — desktop only */}
+        <div className="absolute bottom-10 right-12 hidden md:block">
           <div className="bg-[#111]/90 border border-[#D4AF37]/20 rounded-xl p-4 backdrop-blur-sm text-center">
             <div className="text-2xl font-bold text-[#D4AF37]">4.8</div>
             <div className="flex gap-0.5 justify-center mt-1">
@@ -89,8 +89,8 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Stats */}
-      <section className="py-14 md:py-16 border-y border-[#D4AF37]/10" style={{ background: "#0D0D0D" }}>
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="py-8 md:py-16 border-y border-[#D4AF37]/10" style={{ background: "#0D0D0D" }}>
+        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center">
           {[
             { value: "12+", label: "Pool Tables" },
             { value: "6+", label: "Years Open" },
@@ -108,13 +108,13 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-16 md:py-24 px-4 md:px-6">
+      <section id="about" className="py-10 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden border border-[#D4AF37]/10">
               <Image src="/port-of-pool/about.webp" alt="Port of Pool Club interior" width={700} height={500} className="w-full h-auto object-cover" />
             </div>
-            <div className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-[#131313] border border-[#D4AF37]/20 rounded-xl p-3 md:p-4 shadow-2xl">
+            <div className="hidden sm:block absolute -bottom-4 -right-2 md:-bottom-6 md:-right-6 bg-[#131313] border border-[#D4AF37]/20 rounded-xl p-3 md:p-4 shadow-2xl">
               <div className="flex items-center gap-2 md:gap-3">
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-[#166534] to-[#14532d] flex items-center justify-center text-[#D4AF37] text-base">
                   &#127381;
@@ -150,31 +150,33 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Gallery */}
-      <section id="gallery" className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
+      <section id="gallery" className="py-10 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-6 md:mb-14">
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Inside The Club</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">The Atmosphere</h2>
-            <p className="text-[#F5F0EB]/40 mt-3 md:mt-4 text-sm md:text-base max-w-md mx-auto">See the tables, the crowd, and the energy that makes Port of Pool Club the talk of Colombo.</p>
+            <p className="text-[#F5F0EB]/40 mt-2 md:mt-4 text-sm md:text-base max-w-md mx-auto">See the tables, the crowd, and the energy that makes Port of Pool Club the talk of Colombo.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {/* Mobile: clean 2-col grid, no spanning. Desktop: 3-col with featured spans */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
             {[
-              { src: "/port-of-pool/gallery1.webp", alt: "Players competing at the tables", span: "" },
-              { src: "/port-of-pool/action1.webp", alt: "Game in action — Stroke it Don't Poke It", span: "" },
-              { src: "/port-of-pool/community.webp", alt: "Group of players at the club", span: "" },
-              { src: "/port-of-pool/interior.webp", alt: "Pool table with signature branding", span: "col-span-2 md:col-span-1" },
-              { src: "/port-of-pool/action2.webp", alt: "Concentrated shot in play", span: "" },
-              { src: "/port-of-pool/gallery2.webp", alt: "Elegant table setup", span: "" },
-              { src: "/port-of-pool/events.webp", alt: "Group event at Port of Pool", span: "col-span-2 md:col-span-2" },
-              { src: "/port-of-pool/gaming.webp", alt: "Gaming zone at the club", span: "" },
+              { src: "/port-of-pool/hero.webp",      alt: "Pool room interior",                span: "md:col-span-2" },
+              { src: "/port-of-pool/action1.webp",   alt: "Game in action",                    span: "" },
+              { src: "/port-of-pool/gallery1.webp",  alt: "Players competing",                 span: "" },
+              { src: "/port-of-pool/community.webp", alt: "Group of players at the club",      span: "" },
+              { src: "/port-of-pool/action2.webp",   alt: "Concentrated shot in play",         span: "" },
+              { src: "/port-of-pool/interior.webp",  alt: "Pool table with signature branding",span: "" },
+              { src: "/port-of-pool/gallery2.webp",  alt: "Elegant table setup",               span: "" },
+              { src: "/port-of-pool/events.webp",    alt: "Group event at Port of Pool",       span: "md:col-span-2" },
+              { src: "/port-of-pool/gaming.webp",    alt: "Gaming zone at the club",           span: "" },
             ].map((img) => (
-              <div key={img.src} className={`group relative rounded-xl overflow-hidden border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-300 ${img.span}`}>
+              <div key={img.src} className={`group relative rounded-lg md:rounded-xl overflow-hidden border border-[#D4AF37]/10 hover:border-[#D4AF37]/30 transition-all duration-300 ${img.span}`}>
                 <Image
                   src={img.src}
                   alt={img.alt}
                   width={600}
                   height={450}
-                  className="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-36 sm:h-44 md:h-56 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3 md:p-4">
                   <p className="text-xs text-[#F5F0EB]/80">{img.alt}</p>
@@ -186,14 +188,14 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Amenities */}
-      <section id="amenities" className="py-16 md:py-24 px-4 md:px-6">
+      <section id="amenities" className="py-10 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-6 md:mb-14">
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">What We Offer</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Club Amenities</h2>
-            <p className="text-[#F5F0EB]/40 mt-3 md:mt-4 text-sm max-w-md mx-auto">Everything you need for the perfect session — from tables to entertainment.</p>
+            <p className="text-[#F5F0EB]/40 mt-2 md:mt-4 text-sm max-w-md mx-auto">Everything you need for the perfect session — from tables to entertainment.</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {[
               { icon: "&#127381;", name: "Pool Tables", desc: "Professionally maintained full-size pool tables with premium felt and lighting" },
               { icon: "&#127379;", name: "Snooker Tables", desc: "Full-size snooker tables for serious competitive play and practice" },
@@ -213,9 +215,9 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
+      <section id="pricing" className="py-10 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-6 md:mb-14">
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Simple & Affordable</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Table Rates</h2>
             <p className="text-[#F5F0EB]/40 mt-3 md:mt-4 text-sm max-w-md mx-auto">Straightforward pricing — no hidden fees. Just pick up a cue and play.</p>
@@ -277,9 +279,9 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 md:py-24 px-4 md:px-6">
+      <section className="py-10 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-6 md:mb-14">
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">What Players Say</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">From Our Community</h2>
           </div>
@@ -312,9 +314,9 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Booking */}
-      <section id="booking" className="py-16 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
+      <section id="booking" className="py-10 md:py-24 px-4 md:px-6" style={{ background: "#080808" }}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8 md:mb-14">
+          <div className="text-center mb-6 md:mb-14">
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Reserve Your Spot</span>
             <h2 className="text-2xl md:text-4xl font-light mt-2 md:mt-3 tracking-wide">Book a Table</h2>
             <p className="text-[#F5F0EB]/40 mt-3 text-sm">Fill out the form and we&apos;ll confirm your booking via WhatsApp or call.</p>
@@ -370,7 +372,7 @@ export default function PortOfPoolClub() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-16 md:py-24 px-4 md:px-6">
+      <section id="contact" className="py-10 md:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
             <span className="text-[#D4AF37] text-[10px] md:text-xs font-medium tracking-[0.3em] uppercase">Find Us</span>
