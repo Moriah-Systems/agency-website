@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
+import Header from "./Header";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -217,11 +218,12 @@ const ArrowIcon = ({ className = "w-4 h-4", style }: IconProps) => (
 export default function TmobileJaEla() {
   return (
     <div
-      className={`${spaceGrotesk.variable} min-h-screen`}
+      className={`${spaceGrotesk.variable} min-h-screen overflow-x-hidden`}
       style={{
         background: "#FAFAFA",
         color: "#1F2937",
         fontFamily: "var(--font-inter), system-ui, sans-serif",
+        maxWidth: "100vw",
       }}
     >
       <style>{`
@@ -271,65 +273,10 @@ export default function TmobileJaEla() {
       `}</style>
 
       {/* ===================== HEADER ===================== */}
-      <header
-        className="fixed top-0 inset-x-0 z-50 backdrop-blur-md border-b"
-        style={{ background: "rgba(255, 255, 255, 0.85)", borderColor: "rgba(31, 41, 55, 0.08)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
-          <a href="#top" className="flex items-center gap-2.5 shrink-0">
-            <Image
-              src="/tmobile-ja-ela/logo.jpg"
-              alt="Tmobile Phone Shop Ja-Ela"
-              width={48}
-              height={48}
-              className="h-10 w-10 object-contain"
-              priority
-            />
-            <div className="hidden sm:flex flex-col leading-tight">
-              <span className="tm-display text-base font-700 tracking-tight" style={{ color: "#E11D2E" }}>
-                Tmobile<span style={{ color: "#1F2937" }}> Phone Shop</span>
-              </span>
-              <span className="text-[10px] uppercase tracking-[0.2em]" style={{ color: "#64748B" }}>
-                Ja-Ela
-              </span>
-            </div>
-          </a>
-
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium" style={{ color: "#334155" }}>
-            <a href="#phones" className="hover:text-[#E11D2E] transition">Phones</a>
-            <a href="#services" className="hover:text-[#E11D2E] transition">Services</a>
-            <a href="#brands" className="hover:text-[#E11D2E] transition">Brands</a>
-            <a href="#latest" className="hover:text-[#E11D2E] transition">Latest</a>
-            <a href="#reviews" className="hover:text-[#E11D2E] transition">Reviews</a>
-            <a href="#visit" className="hover:text-[#E11D2E] transition">Visit</a>
-          </nav>
-
-          <div className="flex items-center gap-2">
-            <a
-              href={`tel:${PHONE_NUMBER}`}
-              aria-label="Call us"
-              className="hidden md:flex w-10 h-10 rounded-full items-center justify-center border transition hover:bg-[#FEF2F2]"
-              style={{ borderColor: "rgba(225, 29, 46, 0.25)", color: "#E11D2E" }}
-            >
-              <PhoneIcon />
-            </a>
-            <a
-              href={wa("Hi! I saw your website and I'd like to make an inquiry.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-full text-white transition hover:opacity-95"
-              style={{ background: "linear-gradient(135deg, #E11D2E 0%, #B91C1C 100%)", boxShadow: "0 8px 20px -8px rgba(225, 29, 46, 0.55)" }}
-            >
-              <WhatsAppIcon className="w-4 h-4" />
-              <span className="hidden sm:inline">Visit Us</span>
-              <span className="sm:hidden">Chat</span>
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* ===================== HERO ===================== */}
-      <section id="top" className="relative pt-24 md:pt-28 pb-16 md:pb-20 overflow-hidden" style={{ scrollMarginTop: "80px" }}>
+      <section id="top" className="relative pt-28 md:pt-36 pb-12 md:pb-20 overflow-hidden" style={{ scrollMarginTop: "92px" }}>
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] max-w-[700px] max-h-[700px] rounded-full tm-orb"
                style={{ background: "radial-gradient(circle, rgba(225, 29, 46, 0.18), transparent 70%)" }} />
@@ -400,7 +347,7 @@ export default function TmobileJaEla() {
           </div>
 
           <div className="lg:col-span-5 relative tm-fade-up" style={{ animationDelay: "0.15s" }}>
-            <div className="relative aspect-[4/5] max-w-md mx-auto rounded-3xl overflow-hidden"
+            <div className="relative aspect-[4/5] max-w-[280px] sm:max-w-sm md:max-w-md mx-auto rounded-3xl overflow-hidden"
                  style={{ background: "linear-gradient(135deg, #FEE2E2 0%, #FFFFFF 60%, #FEF3C7 100%)", border: "1px solid rgba(31, 41, 55, 0.06)", boxShadow: "0 30px 80px -30px rgba(225, 29, 46, 0.35)" }}>
               <Image
                 src="/tmobile-ja-ela/phones/apple-iphone-16-pro-max.jpg"
@@ -425,7 +372,7 @@ export default function TmobileJaEla() {
                 </div>
               </div>
             </div>
-            <div className="absolute -top-3 -right-3 md:-top-5 md:-right-5 rounded-2xl p-3 md:p-4"
+            <div className="hidden md:flex absolute -top-5 -right-5 rounded-2xl p-4"
                  style={{ background: "white", border: "1px solid rgba(31, 41, 55, 0.08)", boxShadow: "0 12px 30px -10px rgba(0,0,0,0.15)" }}>
               <div className="flex items-center gap-2.5">
                 <div className="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center" style={{ background: "linear-gradient(135deg, #FEE2E2, #FECDD3)" }}>
@@ -486,7 +433,7 @@ export default function TmobileJaEla() {
       </section>
 
       {/* ===================== FEATURED PHONES BENTO ===================== */}
-      <section id="phones" className="px-4 md:px-6 py-12 md:py-20" style={{ scrollMarginTop: "80px" }}>
+      <section id="phones" className="px-4 md:px-6 py-12 md:py-20" style={{ scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap items-end justify-between gap-4 mb-8 md:mb-12">
             <div>
@@ -501,9 +448,9 @@ export default function TmobileJaEla() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
             {phones.map((phone) => {
-              const cardClass = `group tm-card-hover relative rounded-3xl overflow-hidden ${phone.hero ? "flex flex-col lg:flex-row" : "flex flex-col"} ${phone.span}`;
+              const cardClass = `group tm-card-hover relative rounded-2xl md:rounded-3xl overflow-hidden ${phone.hero ? "flex flex-col lg:flex-row" : "flex flex-col"} ${phone.hero ? "col-span-2" : ""} ${phone.span}`;
               const cardStyle = {
                 background: "white",
                 border: "1px solid rgba(31, 41, 55, 0.06)",
@@ -518,19 +465,19 @@ export default function TmobileJaEla() {
                   className={cardClass}
                   style={cardStyle}
                 >
-                  <div className="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.12em] uppercase px-2.5 py-1 rounded-full"
+                  <div className="absolute top-2.5 left-2.5 md:top-4 md:left-4 z-10 inline-flex items-center gap-1.5 text-[9px] md:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.12em] uppercase px-2 md:px-2.5 py-0.5 md:py-1 rounded-full"
                        style={{ background: "rgba(245, 158, 11, 0.15)", color: "#B45309" }}>
                     {phone.badge}
                   </div>
-                  <div className="absolute top-4 right-4 z-10 text-[10px] font-bold tracking-[0.12em] uppercase" style={{ color: "#94A3B8" }}>
+                  <div className="absolute top-2.5 right-2.5 md:top-4 md:right-4 z-10 text-[9px] md:text-[10px] font-bold tracking-[0.1em] md:tracking-[0.12em] uppercase" style={{ color: "#94A3B8" }}>
                     {phone.brand}
                   </div>
 
                   <div
-                    className={`relative flex items-center justify-center p-6 md:p-8 ${
+                    className={`relative flex items-center justify-center ${
                       phone.hero
-                        ? "h-[280px] md:h-[340px] lg:h-auto lg:min-h-[420px] lg:flex-1"
-                        : "h-[220px] md:h-[240px]"
+                        ? "p-6 md:p-8 h-[260px] md:h-[340px] lg:h-auto lg:min-h-[420px] lg:flex-1"
+                        : "p-3 md:p-7 h-[150px] md:h-[240px]"
                     }`}
                     style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)" }}
                   >
@@ -540,7 +487,7 @@ export default function TmobileJaEla() {
                       width={600}
                       height={600}
                       className={`w-auto object-contain transition-transform duration-500 group-hover:scale-105 ${
-                        phone.hero ? "h-full max-h-[260px] md:max-h-[300px] lg:max-h-[360px]" : "h-full"
+                        phone.hero ? "h-full max-h-[220px] md:max-h-[300px] lg:max-h-[360px]" : "h-full"
                       }`}
                     />
                   </div>
@@ -548,8 +495,8 @@ export default function TmobileJaEla() {
                   <div
                     className={`border-t ${
                       phone.hero
-                        ? "p-6 md:p-8 lg:p-10 lg:border-t-0 lg:border-l lg:flex-1 lg:flex lg:flex-col lg:justify-center"
-                        : "p-4 md:p-5"
+                        ? "p-5 md:p-8 lg:p-10 lg:border-t-0 lg:border-l lg:flex-1 lg:flex lg:flex-col lg:justify-center"
+                        : "p-3 md:p-5"
                     }`}
                     style={{ borderColor: "rgba(31, 41, 55, 0.06)", background: "white" }}
                   >
@@ -560,27 +507,31 @@ export default function TmobileJaEla() {
                       </div>
                     )}
                     <div className={`tm-display font-700 leading-tight ${
-                      phone.hero ? "text-2xl md:text-3xl lg:text-4xl" : "text-base md:text-lg"
+                      phone.hero ? "text-xl md:text-3xl lg:text-4xl" : "text-sm md:text-lg"
                     }`} style={{ color: "#1F2937" }}>
                       {phone.model}
                     </div>
                     <div className={`mt-1 ${
-                      phone.hero ? "text-sm md:text-base" : "text-xs truncate"
+                      phone.hero ? "text-xs md:text-base" : "text-[11px] md:text-xs truncate"
                     }`} style={{ color: "#64748B" }}>{phone.spec}</div>
                     {phone.hero && (
                       <p className="hidden lg:block text-base mt-4 leading-relaxed" style={{ color: "#475569" }}>
                         Apple's most advanced iPhone — titanium frame, A18 Pro chip, the Camera Control button. In stock at our shop today.
                       </p>
                     )}
-                    <div className={`flex items-end justify-between ${phone.hero ? "mt-4 lg:mt-6" : "mt-3"}`}>
+                    <div className={`flex items-end justify-between gap-2 ${phone.hero ? "mt-3 md:mt-4 lg:mt-6" : "mt-2 md:mt-3"}`}>
                       <div className={`tm-display tm-tnum font-700 ${
-                        phone.hero ? "text-2xl md:text-3xl lg:text-4xl" : "text-lg md:text-xl"
+                        phone.hero ? "text-xl md:text-3xl lg:text-4xl" : "text-sm md:text-xl"
                       }`} style={{ color: "#E11D2E" }}>
                         {formatPrice(phone.price)}
                       </div>
-                      <div className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] px-2 py-1 rounded-md"
+                      <div className="hidden md:inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.12em] px-2 py-1 rounded-md"
                            style={{ background: "#F0FDF4", color: "#15803D" }}>
                         <CheckIcon className="w-3 h-3" /> In Stock
+                      </div>
+                      <div className="md:hidden inline-flex items-center justify-center w-6 h-6 rounded-md shrink-0"
+                           style={{ background: "#F0FDF4", color: "#15803D" }} title="In Stock">
+                        <CheckIcon className="w-3 h-3" />
                       </div>
                     </div>
                     {phone.hero && (
@@ -603,7 +554,7 @@ export default function TmobileJaEla() {
 
       {/* ===================== SERVICES ===================== */}
       <section id="services" className="px-4 md:px-6 py-12 md:py-20"
-               style={{ background: "linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)", scrollMarginTop: "80px" }}>
+               style={{ background: "linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)", scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
             <span className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "#E11D2E" }}>What we do</span>
@@ -642,7 +593,7 @@ export default function TmobileJaEla() {
       </section>
 
       {/* ===================== BRANDS ===================== */}
-      <section id="brands" className="px-4 md:px-6 py-12 md:py-16" style={{ scrollMarginTop: "80px" }}>
+      <section id="brands" className="px-4 md:px-6 py-12 md:py-16" style={{ scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 md:mb-10">
             <span className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "#E11D2E" }}>Authorized for</span>
@@ -715,7 +666,7 @@ export default function TmobileJaEla() {
 
       {/* ===================== LIVE FACEBOOK ===================== */}
       <section id="latest" className="px-4 md:px-6 py-12 md:py-20"
-               style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)", scrollMarginTop: "80px" }}>
+               style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)", scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-7">
@@ -786,9 +737,8 @@ export default function TmobileJaEla() {
                 </div>
                 <iframe
                   src={`https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(FB_URL)}&tabs=timeline&width=500&height=560&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false`}
-                  width="500"
-                  height="560"
-                  style={{ border: "none", overflow: "hidden", display: "block", maxWidth: "100%" }}
+                  height={560}
+                  style={{ border: "none", overflow: "hidden", display: "block", width: "100%", maxWidth: "100%" }}
                   scrolling="no"
                   loading="lazy"
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
@@ -801,7 +751,7 @@ export default function TmobileJaEla() {
       </section>
 
       {/* ===================== REVIEWS ===================== */}
-      <section id="reviews" className="px-4 md:px-6 py-12 md:py-20" style={{ scrollMarginTop: "80px" }}>
+      <section id="reviews" className="px-4 md:px-6 py-12 md:py-20" style={{ scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
             <span className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "#E11D2E" }}>From our customers</span>
@@ -860,7 +810,7 @@ export default function TmobileJaEla() {
 
       {/* ===================== VISIT US ===================== */}
       <section id="visit" className="px-4 md:px-6 py-12 md:py-20"
-               style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)", scrollMarginTop: "80px" }}>
+               style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%)", scrollMarginTop: "92px" }}>
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
           <div className="rounded-3xl overflow-hidden min-h-[380px] lg:min-h-[480px]"
                style={{ border: "1px solid rgba(31, 41, 55, 0.08)", boxShadow: "0 16px 40px -16px rgba(0,0,0,0.1)" }}>
