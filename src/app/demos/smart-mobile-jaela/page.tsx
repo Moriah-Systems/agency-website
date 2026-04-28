@@ -606,7 +606,7 @@ export default function SmartMobileJaela() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8 md:mb-12">
             <span className="text-[#D7172A] text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase">Real customers, real Google reviews</span>
-            <h2 className="text-2xl md:text-4xl font-bold mt-2 md:mt-3 tracking-tight text-[#0F172A]" style={{ fontFamily: "var(--font-space-grotesk)" }}>What Ja-Ela is saying</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mt-2 md:mt-3 tracking-tight text-[#0F172A]" style={{ fontFamily: "var(--font-space-grotesk)" }}>What our customers are saying</h2>
             <div className="inline-flex items-center gap-3 mt-5 px-5 py-2.5 rounded-full bg-white ring-1 ring-[#0F172A]/8 shadow-sm">
               <div className="flex items-center gap-0.5 text-[#F59E0B]">
                 {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="w-4 h-4" />)}
