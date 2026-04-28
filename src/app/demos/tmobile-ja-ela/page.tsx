@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Space_Grotesk } from "next/font/google";
 import Header from "./Header";
+import TmobileReels from "./TmobileReels";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -159,6 +160,12 @@ const brands = [
   { name: "Huawei", file: "/tmobile-ja-ela/brands/huawei.svg" },
   { name: "Honor", file: "/tmobile-ja-ela/brands/honor.svg" },
   { name: "Nokia", file: "/tmobile-ja-ela/brands/nokia.svg" },
+];
+
+const customerPosts = [
+  "https://www.facebook.com/jaelatmobile/posts/pfbid02vy4eHar2X2rWFU14sFCToqkbPk72io9LvfqoHf9RUWnEex8EA7oqnemp3ngMDRZFl",
+  "https://www.facebook.com/jaelatmobile/posts/pfbid0uKWHoUMPdW827Wk2622XAKCLXa35ea1f7bckEKkehnAHbvGinwCssvfn2Ds3MFwrl",
+  "https://www.facebook.com/jaelatmobile/posts/pfbid02fYrKt95P2cHtaPRtTcJW7889jPZtWoiWVyBvqzA5NUKVEncgfyQEGguES8satztLl",
 ];
 
 const stats = [
@@ -427,6 +434,89 @@ export default function TmobileJaEla() {
                 <div className="text-[10px] uppercase tracking-[0.15em] font-semibold" style={{ color: "#64748B" }}>Visit · Get Directions</div>
                 <div className="text-sm md:text-base font-semibold truncate" style={{ color: "#1F2937" }}>108/D Old Negombo Rd</div>
               </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== REELS ===================== */}
+      <section id="reels" className="px-4 md:px-6 py-10 md:py-16" style={{ scrollMarginTop: "92px" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap items-end justify-between gap-3 mb-6 md:mb-10">
+            <div>
+              <span className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "#E11D2E" }}>
+                Watch us in action
+              </span>
+              <h2 className="tm-display text-2xl sm:text-3xl md:text-5xl font-700 mt-2 tracking-tight" style={{ color: "#1F2937" }}>
+                Real customers. Real handoffs.
+              </h2>
+              <p className="mt-3 text-sm md:text-base max-w-xl" style={{ color: "#475569" }}>
+                Snippets from our Facebook page — new arrivals, customer purchases and what a typical day in the shop looks like.
+              </p>
+            </div>
+            <a href="https://www.facebook.com/jaelatmobile" target="_blank" rel="noopener noreferrer"
+               className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold transition hover:gap-3" style={{ color: "#E11D2E" }}>
+              See more on Facebook
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
+          </div>
+          <TmobileReels />
+        </div>
+      </section>
+
+      {/* ===================== HAPPY CUSTOMERS ===================== */}
+      <section id="customers" className="px-4 md:px-6 py-12 md:py-20" style={{ scrollMarginTop: "92px", background: "linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)" }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+            <span className="text-xs font-semibold tracking-[0.25em] uppercase" style={{ color: "#E11D2E" }}>
+              Our happy customers
+            </span>
+            <h2 className="tm-display text-3xl md:text-5xl font-700 mt-2 tracking-tight" style={{ color: "#1F2937" }}>
+              Real handoffs, real smiles.
+            </h2>
+            <p className="mt-4 text-base md:text-lg" style={{ color: "#475569" }}>
+              Customers picking up their new phones, posted live to our Facebook page. Tap any card to see the original post.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {customerPosts.map((url, i) => (
+              <div
+                key={url}
+                className="rounded-3xl overflow-hidden flex justify-center"
+                style={{
+                  background: "white",
+                  border: "1px solid rgba(31, 41, 55, 0.06)",
+                  boxShadow: "0 12px 32px -16px rgba(0, 0, 0, 0.12)",
+                  minHeight: 0,
+                }}
+              >
+                <iframe
+                  src={`https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=false&width=500&adapt_container_width=true`}
+                  height={620}
+                  style={{ border: "none", overflow: "hidden", display: "block", width: "100%", maxWidth: "100%" }}
+                  scrolling="no"
+                  loading="lazy"
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title={`Happy customer ${i + 1} — Tmobile Phone Shop Ja-Ela`}
+                />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10 md:mt-14">
+            <a
+              href="https://www.facebook.com/jaelatmobile"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm md:text-base font-semibold px-6 py-3.5 rounded-full text-white transition hover:opacity-95"
+              style={{ background: "#1877F2", boxShadow: "0 12px 30px -10px rgba(24, 119, 242, 0.55)" }}
+            >
+              <FacebookIcon className="w-4 h-4" />
+              See more happy customers on Facebook
             </a>
           </div>
         </div>
